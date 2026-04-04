@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Yim: Projects</title>
+    <link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/resume.html">Resume</a></li>
-            <li><a href="/projects/index.html">Projects</a></li>
-            <li><a href="/contact/index.html">Contact</a></li>
-            <li><a href="https://github.com/jyim1203" target="_blank">Github</a></li>
-        </ul>
-    </nav>
+    <div id="nav-placeholder"></div>
+
+    <script>
+        fetch('/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
     <h1>Projects</h1>
 </body>
 </html>

@@ -4,47 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Yim | Resume</title>
-    <style>
-        /* Professional Reset & Styling */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            max-width: 850px; 
-            margin: auto; 
-            padding: 40px 20px; 
-            color: #333;
-        }
-        header { text-align: center; margin-bottom: 40px; }
-        h1 { margin-bottom: 5px; color: #2c3e50; }
-        h2 { border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin-top: 30px; text-transform: uppercase; font-size: 1.2rem; }
-        h3 { margin-bottom: 5px; color: #34495e; }
-        
-        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
-        nav a { text-decoration: none; color: #3498db; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-
-        .item-header { display: flex; justify-content: space-between; font-weight: bold; align-items: baseline; }
-        .location { font-style: italic; color: #666; font-weight: normal; }
-        .date { color: #666; font-weight: normal; }
-        
-        .skills-list { list-style: none; padding: 0; }
-        .skills-list li { margin-bottom: 5px; }
-        
-        ul { margin-top: 5px; padding-left: 20px; }
-        li { margin-bottom: 4px; }
-        .project-item { margin-bottom: 20px; }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/resume.html">Resume</a></li>
-            <li><a href="/projects/index.html">Projects</a></li>
-            <li><a href="https://github.com/jyim1203" target="_blank">GitHub</a></li>
-        </ul>
-    </nav>
+    <div id="nav-placeholder"></div>
+
+    <script>
+        fetch('/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
 
     <header>
         <h1>Jonathan Yim</h1>
@@ -53,94 +25,93 @@
 
     <section id="education">
         <h2>Education</h2>
-        <div class="item-header">
-            <span>University of California, San Diego</span>
-            <span class="date">Sept 2024 – June 2027 (Expected)</span>
-        </div>
-        <div>
-            <span>B.S. Data Science | Minor in Cognitive Science (ML Specialization)</span>
-        </div>
+        <article>
+            <header class="item-header">
+                <h3>University of California, San Diego</h3>
+                <span class="date">
+                    <time datetime="2024-09">Sept 2024</time> – <time datetime="2027-06">June 2027</time> (Expected)
+                </span>
+            </header>
+            <p>B.S. Data Science | Minor in Cognitive Science (ML Specialization)</p>
+        </article>
     </section>
 
     <section id="skills">
         <h2>Technical Skills</h2>
         <ul class="skills-list">
             <li><strong>Languages:</strong> Python, Java, C++, R</li>
-            <li><strong>Frameworks/Libraries:</strong> Pandas, NumPy, Scikit-learn, PyTorch, Matplotlib, Seaborn, Plotly</li>
-            <li><strong>Tools:</strong> Git/GitHub, VS Code, Jupyter Notebooks, KaggleHub</li>
+            <li><strong>Frameworks:</strong> Pandas, NumPy, Scikit-learn, PyTorch, Matplotlib, Seaborn, Plotly</li>
+            <li><strong>Technologies:</strong> Git, GitHub, VS Code, Jupyter Notebooks</li>
         </ul>
     </section>
 
     <section id="projects">
         <h2>Selected Projects</h2>
         
-        <div class="project-item">
-            <div class="item-header">
-                <h3>Movie Recommendation System (HMM)</h3>
-                <span class="date">Python, Pandas, Scikit-learn</span>
-            </div>
+        <article>
+            <header class="item-header">
+                <h3><a href="https://github.com/n2joseph4/CSE150A_Project" target="_blank">Movie Recommendation System (HMM)</a></h3>
+                <span class="date">Python, Scikit-learn</span>
+            </header>
             <ul>
-                <li>Architected a <strong>Hidden Markov Model (HMM)</strong> to predict movie preferences by modeling user "moods" as hidden states and movie attributes as observable emissions.</li>
-                <li>Cleaned and engineered features from the Kaggle Movies dataset, implementing custom <strong>label encoding</strong> for composite observation symbols.</li>
-                <li>Optimized recommendations using <strong>probabilistic reasoning</strong> and log-likelihood scores to ensure temporal consistency in suggestions.</li>
+                <li>Architected a <strong>Hidden Markov Model (HMM)</strong> to predict movie preferences by modeling user "moods" as 
+                    hidden states and movie attributes as observable emissions.</li>
+                <li>Cleaned and engineered features from the Kaggle Movies dataset, implementing custom label encoding for composite 
+                    observation symbols.</li>
+                <li>Optimized recommendations using probabilistic reasoning and log-likelihood scores to ensure temporal consistency 
+                    in suggestions.</li>
             </ul>
-        </div>
+        </article>
 
-        <div class="project-item">
-            <div class="item-header">
+        <article>
+            <header class="item-header">
                 <h3>Blockography.AI (ACM Hackathon)</h3>
-                <span class="date">PyTorch, Computer Vision</span>
-            </div>
+                <span class="date">PyTorch</span>
+            </header>
             <ul>
-                <li>Developed a PyTorch image classification model to predict Minecraft biomes with <strong>85% accuracy</strong>.</li>
+                <li>Developed a PyTorch image classification model to predict Minecraft biomes with 85% accuracy.</li>
             </ul>
-        </div>
+        </article>
 
-        <div class="project-item">
-            <div class="item-header">
-                <h3>Power Outage Analysis</h3>
-                <span class="date">Python, Random Forest, CatBoost</span>
-            </div>
+        <article>
+            <header class="item-header">
+                <h3><a href="https://github.com/jyim1203/power-outages-analysis" target="_blank">Power Outage Analysis</a></h3>
+                <span class="date">Random Forest, CatBoost</span>
+            </header>
             <ul>
                 <li>Analyzed 1,500+ major U.S. power outages and built regression models to predict restoration duration.</li>
             </ul>
-        </div>
-
-        <div class="project-item">
-            <div class="item-header">
-                <h3>Student Grade Analysis & Visualization</h3>
-                <span class="date">Python, Data Cleaning</span>
-            </div>
-            <ul>
-                <li>Automated grade calculation pipelines for 500+ students, incorporating complex syllabus-specific redemption rules.</li>
-                <li>Visualized performance trends to identify section-level improvement patterns and grade distributions.</li>
-            </ul>
-        </div>
+        </article>
     </section>
 
     <section id="experience">
         <h2>Work Experience</h2>
-        <div class="job">
-            <div class="item-header">
-                <span>Poke Koma | Team Member</span>
-                <span class="date">Dec 2022 – Aug 2024</span>
-            </div>
+        
+        <article>
+            <header class="item-header">
+                <h3>Poke Koma | Team Member</h3>
+                <span class="date">
+                    <time datetime="2022-12">Dec 2022</time> – <time datetime="2024-08">Aug 2024</time>
+                </span>
+            </header>
             <ul>
-                <li>Managed high-volume financial transactions and processed hundreds of orders per shift.</li>
-                <li>Trained new staff on service standards and upheld strict health and safety protocols.</li>
+                <li>Managed high-volume financial transactions and processed hundreds of customer orders per shift.</li>
+                <li>Trained new team members on service standards and safety protocols.</li>
             </ul>
-        </div>
+        </article>
 
-        <div class="job">
-            <div class="item-header">
-                <span>Alameda Recreation and Park Dept | Lifeguard & Instructor</span>
-                <span class="date">May 2022 – Dec 2022</span>
-            </div>
+        <article>
+            <header class="item-header">
+                <h3>Alameda Recreation and Park Dept | Lifeguard</h3>
+                <span class="date">
+                    <time datetime="2022-05">May 2022</time> – <time datetime="2022-12">Dec 2022</time>
+                </span>
+            </header>
             <ul>
-                <li>Led swim instruction for groups of 1–12, tailoring pedagogy to various proficiency levels.</li>
-                <li>Ensured the safety of 200+ daily participants and collaborated with a 50-member team for facility management.</li>
+                <li>Led swim lessons for groups of 1–12 students, tailoring instruction to individual proficiency levels.</li>
+                <li>Monitored and ensured the safety of 200+ daily participants in open-swim settings.</li>
             </ul>
-        </div>
+        </article>
     </section>
 
 </body>
