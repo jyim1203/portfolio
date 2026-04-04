@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan Yim: Personal Site and Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jonathan Yim: Contact</title>
 </head>
 <body>
     <nav>
@@ -16,12 +15,21 @@
             <li><a href="https://github.com/jyim1203" target="_blank">Github</a></li>
         </ul>
     </nav>
+    <h1>Contacts</h1>
+    <form action="mailto:jyim1203@gmail.com" method="post" enctype="text/plain">
+        <label for="email">Email:
+        <input name="email" type="email">
+        </label>
 
-    <h1>Jonathan Yim</h1>
-    <p>Welcome to my personal site and portfolio! 
-        I am a data science student at UC San Diego with a passion for creating innovative solutions and building impactful projects. 
-        Here you can find information about my background, skills, and some of the projects I've worked on!
-    </p>
-    <img src="images/ucsd-sunset.jpg" alt="Sunset at UC San Diego" style="width:100%;height:auto;">
+        <label for="subject">Subject:
+        <input name="subject">
+        </label>
+
+        <label for="body">Message:
+        <textarea name="body" rows="5" cols="30"></textarea>
+        </label>
+
+        <button type="submit">Send</button>
+    </form>
 </body>
 </html>
