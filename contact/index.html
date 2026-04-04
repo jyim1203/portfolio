@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Yim: Contact</title>
-    <link rel="stylesheet" href="/style.css">
+    <base href="/portfolio/">
+    <link rel="stylesheet" href="../style.css">
 
 </head>
 <body>
     <div id="nav-placeholder"></div>
 
     <script>
-        fetch('/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
+    fetch('../nav.html')
+        .then(res => res.text())
+        .then(data => {
+            let nav = document.getElementById('nav-placeholder');
+            nav.innerHTML = data;
+            // go up one level for all nav links since we're in a subdirectory
+            nav.querySelectorAll('a').forEach(link => {
+                let href = link.getAttribute('href');
+                if (href && !href.startsWith('http')) {
+                    link.setAttribute('href', '../' + href);
+                }
             });
+        });
     </script>
+
     <h1>Contacts</h1>
     <form action="mailto:jyim1203@gmail.com" method="post" enctype="text/plain">
         <label for="email">Email:
