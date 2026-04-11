@@ -10,21 +10,7 @@
 <body>
     <div id="nav-placeholder"></div>
 
-    <script>
-    fetch('../nav.html')
-        .then(res => res.text())
-        .then(data => {
-            let nav = document.getElementById('nav-placeholder');
-            nav.innerHTML = data;
-            // go up one level for all nav links since we're in a subdirectory
-            nav.querySelectorAll('a').forEach(link => {
-                let href = link.getAttribute('href');
-                if (href && !href.startsWith('http')) {
-                    link.setAttribute('href', '../' + href);
-                }
-            });
-        });
-    </script>
+    <script src="../nav.js"></script>
 
     <h1>Contacts</h1>
     <form action="mailto:jyim1203@gmail.com" method="post" enctype="text/plain">

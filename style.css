@@ -1,25 +1,38 @@
-body { 
+html {
+    --color-accent: oklch(83.78% 0.10784 193.86);
+    accent-color: var(--color-accent);
+}
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     line-height: 1.6; 
-    max-width: 850px; 
-    margin: auto; 
-    padding: 40px 20px; 
+    max-width: 100ch; 
+    margin-inline: auto; 
+    padding: 2.5rem 1.5rem; 
     color: #333;
 }
 
 /* Header & Nav */
 header { text-align: center; margin-bottom: 40px; }
-h1 { margin-bottom: 5px; color: #2c3e50; }
-nav ul { 
-    list-style: none; 
-    padding: 0; 
-    display: flex; 
-    justify-content: center; 
-    gap: 20px; 
-    border-bottom: 1px solid #ddd; 
-    padding-bottom: 20px; 
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
 }
-nav a { text-decoration: none; color: #3498db; font-weight: bold; }
+h1 { font-size: 4rem; margin-bottom: 5px; color: #2c3e50; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+nav {
+    display: flex;
+    gap: 1.25rem;
+    border-bottom: 1px solid oklch(80% 3% 200);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+nav ul { display: contents; }
+nav li { display: contents; }
+nav a { text-decoration: none; color: inherit; font-weight: bold; flex: 1; text-align: center; padding: 0.5em; }
+nav a.current { border-bottom: 0.4em solid oklch(80% 3% 200); padding-bottom: 0.1em; }
+nav a:hover { border-bottom: 0.4em solid var(--color-accent); padding-bottom: 0.1em; }
 
 /* Resume/Project Specific Sections */
 h2 { border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin-top: 30px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
@@ -32,3 +45,47 @@ article { margin-bottom: 20px; }
 .skills-list { list-style: none; padding: 0; }
 ul { margin-top: 5px; padding-left: 20px; }
 li { margin-bottom: 4px; }
+
+/* Projects Grid */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+.projects article {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    gap: 1em;
+}
+
+.projects article h2 {
+    margin: 0;
+}
+
+/* Contact Form */
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+label {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: baseline;
+}
+
+form button {
+    grid-column: 2;
+}
+
+input, textarea, button, select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+}
