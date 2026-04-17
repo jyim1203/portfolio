@@ -1,52 +1,68 @@
 html {
     --color-accent: oklch(83.78% 0.10784 193.86);
+    --color-bg: #fff;
+    --color-text: #333;
+    --color-heading: #2c3e50;
+    --color-subheading: #34495e;
+    --color-muted: #666;
+    --color-border: #2c3e50;
     accent-color: var(--color-accent);
+    color-scheme: light dark;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    line-height: 1.6; 
-    max-width: 100ch; 
-    margin-inline: auto; 
-    padding: 2.5rem 1.5rem; 
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 100ch;
+    margin-inline: auto;
+    padding: 2.5rem 1.5rem;
+    color: canvastext;
+    background-color: canvas;
 }
 
-/* Header & Nav */
+/* header + nav */
 header { text-align: center; margin-bottom: 40px; }
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-wrap: balance;
 }
-h1 { font-size: 4rem; margin-bottom: 5px; color: #2c3e50; }
+
+h1 { font-size: 4rem; margin-bottom: 5px; }
 h2 { font-size: 2.5rem; }
 h3 { font-size: 1.75rem; }
+
 nav {
+    --border-color: oklch(50% 10% 200 / 40%);
     display: flex;
     gap: 1.25rem;
-    border-bottom: 1px solid oklch(80% 3% 200);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 1.25rem;
     margin-bottom: 2.5rem;
 }
+
 nav ul { display: contents; }
 nav li { display: contents; }
 nav a { text-decoration: none; color: inherit; font-weight: bold; flex: 1; text-align: center; padding: 0.5em; }
-nav a.current { border-bottom: 0.4em solid oklch(80% 3% 200); padding-bottom: 0.1em; }
-nav a:hover { border-bottom: 0.4em solid var(--color-accent); padding-bottom: 0.1em; }
+nav a.current { border-bottom: 0.4em solid var(--border-color); padding-bottom: 0.1em; }
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
+    padding-bottom: 0.1em;
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
 
-/* Resume/Project Specific Sections */
-h2 { border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin-top: 30px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
-h3 { margin: 0; color: #34495e; font-size: 1.05rem; }
+/* resume/project sections */
+h2 { border-bottom: 2px solid canvastext; padding-bottom: 5px; margin-top: 30px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
+h3 { margin: 0; font-size: 1.05rem; }
 
 article { margin-bottom: 20px; }
 .item-header { display: flex; justify-content: space-between; align-items: baseline; font-weight: bold; }
-.date { color: #666; font-weight: normal; font-size: 0.9rem; }
+.date { color: canvastext; opacity: 0.6; font-weight: normal; font-size: 0.9rem; }
 
 .skills-list { list-style: none; padding: 0; }
 ul { margin-top: 5px; padding-left: 20px; }
 li { margin-bottom: 4px; }
 
-/* Projects Grid */
+/* projects grid */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -65,7 +81,18 @@ li { margin-bottom: 4px; }
     margin: 0;
 }
 
-/* Contact Form */
+label.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+}
+
+label.color-scheme select {
+    font-family: inherit;
+}
+
+/* contacts */
 form {
     display: grid;
     grid-template-columns: auto 1fr;
