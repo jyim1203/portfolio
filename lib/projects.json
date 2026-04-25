@@ -1,0 +1,74 @@
+[
+  {
+    "title": "DataHacks26: Pycnocline Compression Mapping and Prediction",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Processed 198K global Argo float profiles to map and predict changes in pycnocline-bounded marine habitable zones, training an XGBoost model (R² = 0.986) that identifies pycnocline depth as the dominant spatial driver of ocean habitat compression."
+  },
+  {
+    "title": "DiamondHacks26: AI Speech Coach",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "SmartIQ is an AI-powered communication tool designed to help users refine their verbal delivery and social interactions through real-time feedback and analysis."
+  },
+  {
+    "title": "DSC80: Power Outage Analysis",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "This project performs a comprehensive statistical and exploratory data analysis of major power outages in the United States to identify significant patterns, such as the relationship between specific causes and the severity or duration of the outages."
+  },
+  {
+    "title": "COGS108: Textile Environmental Impact Analysis",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "This project investigates the environmental impact of various textile categories (Plastic, Mixed, and Non-Plastic) through statistical analysis and machine learning, ultimately finding that material type alone does not meaningfully explain differences in greenhouse gas emissions, resource consumption, or waste generation."
+  },
+  {
+    "title": "CSE150A: Movie Recommendation System",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "This project implements a Hidden Markov Model (HMM) to analyze the movie industry's temporal evolution, identifying distinct 'regimes' (such as mainstream vs. indie eras) to predict movie characteristics and trends over time."
+  },
+  {
+    "title": "Libero sunt officia necessitatibus.",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Ullam minus, temporibus ducimus hic libero nemo et beatae veniam quam distinctio aspernatur fugiat harum laudantium, perspiciatis pariatur explicabo tempora laboriosam atque accusantium vel. Harum cumque dolorem nam vero."
+  },
+  {
+    "title": "Praesentium modi veritatis ipsa.",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Expedita maiores nesciunt dolorem consectetur quas eius hic, molestias mollitia facere repellat reprehenderit enim autem impedit ullam. Officia, sit. Veritatis velit a reprehenderit numquam quos harum nisi, rem inventore."
+  },
+  {
+    "title": "Consequatur nostrum minus dolore.",
+    "year": "2022",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Nostrum sit repellendus, adipisci sed ducimus quod. Reprehenderit, quo quisquam recusandae assumenda mollitia ex tenetur repellat et. Ea dolorem numquam eligendi, quos doloribus consequatur alias unde debitis nam maiores."
+  },
+  {
+    "title": "Sapiente tempora nostrum modi.",
+    "year": "2022",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Ex nulla reiciendis voluptatibus laboriosam, tenetur dolorum blanditiis earum architecto? Iure ratione assumenda voluptas vel sed, sapiente odio temporibus accusantium optio quis voluptatem quia error quas delectus!"
+  },
+  {
+    "title": "Repellendus sint voluptates cum.",
+    "year": "2022",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Fugit fugiat eaque molestias nobis esse. Ab quo sunt suscipit alias, repellendus saepe veniam sapiente porro enim quaerat sint animi nesciunt dolor adipisci dicta nihil fuga repellat, natus fugit maiores!"
+  },
+  {
+    "title": "Dolore dolorum sit amet.",
+    "year": "2021",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Temporibus iste officiis ab totam odit in illo sequi autem! Facilis rem vel beatae fugit consequuntur porro ducimus, consequatur alias nostrum quam maiores unde explicabo eos mollitia magni ex cumque."
+  },
+  {
+    "title": "Labore quidem eveniet sunt.",
+    "year": "2021",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Aperiam neque suscipit dicta fugiat. Saepe sint earum corporis aperiam cumque quo in assumenda omnis ipsum repudiandae? Ea aut veritatis illum voluptates possimus soluta rem officia sunt, culpa enim maxime."
+  }
+]

@@ -64,6 +64,7 @@ li { margin-bottom: 4px; }
 
 /* projects grid */
 .projects {
+    margin-top: 2em;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     grid-template-rows: auto;
@@ -90,6 +91,28 @@ label.color-scheme {
 
 label.color-scheme select {
     font-family: inherit;
+}
+
+/* github stats */
+#profile-stats dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em 1em;
+    margin: 0;
+    padding: 0;
+}
+
+#profile-stats dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+#profile-stats dd {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
 }
 
 /* contacts */
