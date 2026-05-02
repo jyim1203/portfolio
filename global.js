@@ -5,7 +5,7 @@ function $$(selector, context = document) {
 }
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-    ? "/portfolio/"        // Local server
+    ? "/"                  // Local server (Live Server root = portfolio folder)
     : "/portfolio/";       // GitHub Pages repo name
 
 
@@ -100,7 +100,10 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <img src="${project.image}" alt="${project.title}">
-      <p>${project.description}</p>
+      <div>
+        <p>${project.description}</p>
+        ${project.year ? `<p class="project-year">${project.year}</p>` : ''}
+      </div>
     `;
     containerElement.appendChild(article);
   }

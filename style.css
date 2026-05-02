@@ -62,6 +62,58 @@ article { margin-bottom: 20px; }
 ul { margin-top: 5px; padding-left: 20px; }
 li { margin-bottom: 4px; }
 
+/* pie chart */
+#projects-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+svg:has(path:hover) path:not(:hover),
+svg:has(.selected) path:not(.selected) {
+  opacity: 0.5;
+}
+
+svg:has(.selected):has(path:hover) path:hover {
+  opacity: 1;
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  flex: 1;
+  list-style: none;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
 /* projects grid */
 .projects {
     margin-top: 2em;
@@ -80,6 +132,13 @@ li { margin-bottom: 4px; }
 
 .projects article h2 {
     margin: 0;
+}
+
+.project-year {
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+    color: canvastext;
+    opacity: 0.6;
 }
 
 label.color-scheme {
