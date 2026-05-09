@@ -174,27 +174,106 @@ label.color-scheme select {
     margin: 0;
 }
 
-/* contacts */
-form {
+/* stats display */
+.stats {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 1em;
+    gap: 0.5em 1em;
+    margin: 0;
+    padding: 0;
 }
 
-label {
+.stats dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+.stats dd {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* gridlines */
+.gridlines line {
+    stroke: canvastext;
+    stroke-opacity: 0.15;
+    shape-rendering: crispEdges;
+}
+
+.gridlines .domain {
+    stroke-opacity: 0;
+}
+
+/* circle hover */
+circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+circle:hover {
+    transform: scale(1.5);
+}
+
+
+/* info tooltip */
+dl.info {
     display: grid;
-    grid-column: 1 / -1;
-    grid-template-columns: subgrid;
-    align-items: baseline;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em 1em;
+    margin: 0;
+    padding: 0.75em;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
 }
 
-form button {
-    grid-column: 2;
+dl.info dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    margin: 0;
 }
 
-input, textarea, button, select {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    font: inherit;
+dl.info dd {
+    margin: 0;
+    font-weight: bold;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    background: canvas;
+    border: 1px solid canvastext;
+    border-color: oklch(50% 10% 200 / 40%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 0.75em 1em;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
 }

@@ -5,7 +5,7 @@ function $$(selector, context = document) {
 }
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-    ? "/"                  // Local server (Live Server root = portfolio folder)
+    ? "/portfolio/"         // Local server (Live Server root = portfolio folder). change to "/" if running from inside portfolio folder
     : "/portfolio/";       // GitHub Pages repo name
 
 
@@ -15,6 +15,7 @@ let pages = [
     { url: 'resume.html', title: 'Resume' },
     { url: 'projects/',   title: 'Projects' },
     { url: 'contact/',    title: 'Contact' },
+    { url: 'meta/',       title: 'Meta' },
     { url: 'https://github.com/jyim1203', title: 'Github' },
 ];
 
